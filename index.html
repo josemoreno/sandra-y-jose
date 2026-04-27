@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Boda de Sandra y José – 31 de octubre de 2026 en Finca San Miguel, Tenerife. Toda la información sobre nuestra boda." />
+  <title>Sandra &amp; José – 31 · 10 · 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">S &amp; J</span>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#fecha-lugar">Fecha &amp; Lugar</a></li>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#autobus">Autobús</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <!-- <li><a href="#confirmacion">Confirmación</a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-pre">nos casamos</p>
+      <h1 class="hero-names">Sandra <span class="amp">&amp;</span> José</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-date">31 · Octubre · 2026</p>
+      <p class="hero-venue">Finca San Miguel · La Orotava, Tenerife</p>
+      <div class="countdown" id="countdown">
+        <div class="count-item"><span id="cd-days">--</span><label>días</label></div>
+        <div class="count-sep">:</div>
+        <div class="count-item"><span id="cd-hours">--</span><label>horas</label></div>
+        <div class="count-sep">:</div>
+        <div class="count-item"><span id="cd-mins">--</span><label>minutos</label></div>
+        <div class="count-sep">:</div>
+        <div class="count-item"><span id="cd-secs">--</span><label>segundos</label></div>
+      </div>
+      <a href="#fecha-lugar" class="btn-hero">Ver detalles</a>
+    </div>
+    <div class="hero-scroll-hint">↓</div>
+  </section>
+
+  <!-- FECHA Y LUGAR -->
+  <section id="fecha-lugar" class="section">
+    <div class="section-inner">
+      <span class="section-tag">Cuándo &amp; Dónde</span>
+      <h2 class="section-title">Fecha y Lugar</h2>
+      <div class="fl-grid">
+        <div class="fl-card">
+          <div class="fl-icon">📅</div>
+          <h3>La fecha</h3>
+          <p>Sábado, 31 de octubre de 2026</p>
+          <p class="fl-sub">Ceremonia a las 13:00 h</p>
+        </div>
+        <div class="fl-card">
+          <div class="fl-icon">📍</div>
+          <h3>El lugar</h3>
+          <p>Finca San Miguel</p>
+          <p class="fl-sub">C/ San Miguel, La Orotava<br />38300 Tenerife</p>
+        </div>
+        <div class="fl-card">
+          <div class="fl-icon">🌊</div>
+          <h3>La finca</h3>
+          <p>Un enclave único entre jardines tropicales y las vistas al Atlántico.</p>
+        </div>
+      </div>
+      <div class="venue-img-wrap">
+        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1400&q=80"
+          alt="Jardines de la finca con vistas al océano" class="venue-img" loading="lazy" />
+        <div class="venue-img-caption">Finca San Miguel · La Orotava, Tenerife</div>
+      </div>
+      <div class="map-wrap">
+        <iframe id="map-iframe" title="Finca San Miguel en Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3482.4!2d-16.5230!3d28.3886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4029b9c84d4b23%3A0xb6b4bcab5df93b0b!2sFinca%20San%20Miguel!5e0!3m2!1ses!2ses!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMA -->
+  <section id="programa" class="section section-dark">
+    <div class="section-inner">
+      <span class="section-tag">El gran día</span>
+      <h2 class="section-title">Programa</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">12:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3>Llegada de invitados</h3>
+            <p>Recibimiento con cóctel de bienvenida en los jardines.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">13:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3>Ceremonia</h3>
+            <p>Celebración del enlace en los jardines de la finca.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">14:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3>Cóctel y aperitivos</h3>
+            <p>Degustación de entrantes y bebidas mientras disfrutáis de las vistas.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">15:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3>Banquete</h3>
+            <p>Comida y celebración en el salón principal.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">18:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3>Tarta y baile</h3>
+            <p>Corte de tarta y ¡a bailar!</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">20:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3>Fiesta</h3>
+            <p>DJ y pista de baile. ¡La noche es larga!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOBÚS -->
+  <section id="autobus" class="section">
+    <div class="section-inner">
+      <span class="section-tag">Transporte</span>
+      <h2 class="section-title">Autobús</h2>
+      <p class="section-intro">Para que nadie tenga que preocuparse por el transporte, hemos organizado autobuses de ida
+        y vuelta desde distintos puntos de la isla.</p>
+      <div class="bus-grid">
+        <div class="bus-card">
+          <div class="bus-route">
+            <span class="bus-icon">🚌</span>
+            <div>
+              <h3>Santa Cruz de Tenerife</h3>
+              <p class="bus-stop">Parada: Plaza de España</p>
+            </div>
+          </div>
+          <div class="bus-times">
+            <div class="bus-time-row">
+              <span class="bus-label">Ida</span>
+              <span class="bus-hour">11:30 h</span>
+            </div>
+            <div class="bus-time-row">
+              <span class="bus-label">Vuelta</span>
+              <span class="bus-hour">01:00 h · 03:00 h</span>
+            </div>
+          </div>
+        </div>
+        <div class="bus-card">
+          <div class="bus-route">
+            <span class="bus-icon">🚌</span>
+            <div>
+              <h3>Puerto de la Cruz</h3>
+              <p class="bus-stop">Parada: Plaza del Charco</p>
+            </div>
+          </div>
+          <div class="bus-times">
+            <div class="bus-time-row">
+              <span class="bus-label">Ida</span>
+              <span class="bus-hour">12:00 h</span>
+            </div>
+            <div class="bus-time-row">
+              <span class="bus-label">Vuelta</span>
+              <span class="bus-hour">01:00 h · 03:00 h</span>
+            </div>
+          </div>
+        </div>
+        <div class="bus-card">
+          <div class="bus-route">
+            <span class="bus-icon">🚌</span>
+            <div>
+              <h3>Los Cristianos / Las Américas</h3>
+              <p class="bus-stop">Parada: Centro Comercial Safari</p>
+            </div>
+          </div>
+          <div class="bus-times">
+            <div class="bus-time-row">
+              <span class="bus-label">Ida</span>
+              <span class="bus-hour">10:30 h</span>
+            </div>
+            <div class="bus-time-row">
+              <span class="bus-label">Vuelta</span>
+              <span class="bus-hour">01:00 h · 03:00 h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bus-note">
+        <p>🎃 Recuerda que la boda es el día de Halloween – ¡anímate a venir disfrazado/a!</p>
+        <p>Para reservar tu plaza en el autobús, envíanos un mensaje. ¡Cuánto antes mejor!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTOS CAROUSEL -->
+  <section id="fotos" class="section section-dark">
+    <div class="section-inner">
+      <span class="section-tag">Nuestra historia</span>
+      <h2 class="section-title">Galería</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" id="carousel">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Pareja en boda"
+                loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80" alt="Ceremonia de boda"
+                loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=800&q=80" alt="Decoración floral"
+                loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Anillos de boda"
+                loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80" alt="Jardín de finca"
+                loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80" alt="Celebración"
+                loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">&#8592;</button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">&#8594;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIRMACIÓN -->
+  <!-- <section id="confirmacion" class="section">
+      <div class="section-inner">
+        <span class="section-tag">¿Venís?</span>
+        <h2 class="section-title">Confirmación de asistencia</h2>
+        <p class="section-intro">Por favor, confirmad vuestra asistencia antes del <strong>30 de junio de 2026</strong>.</p>
+        <form class="rsvp-form" id="rsvpForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="asistencia">Asistencia *</label>
+              <select id="asistencia" name="asistencia" required>
+                <option value="">Selecciona...</option>
+                <option value="si">✅ Sí, allí estaré</option>
+                <option value="no">❌ No podré asistir</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="acompanantes">Acompañantes</label>
+              <select id="acompanantes" name="acompanantes">
+                <option value="0">Solo/a</option>
+                <option value="1">+1 persona</option>
+                <option value="2">+2 personas</option>
+                <option value="3">+3 personas</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group form-group-full">
+              <label for="autobus-check">¿Necesitáis autobús?</label>
+              <select id="autobus-check" name="autobus">
+                <option value="no">No, gracias</option>
+                <option value="santa-cruz">Sí – Santa Cruz de Tenerife</option>
+                <option value="puerto">Sí – Puerto de la Cruz</option>
+                <option value="sur">Sí – Los Cristianos / Las Américas</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group form-group-full">
+              <label for="alergias">Alergias o restricciones alimentarias</label>
+              <textarea id="alergias" name="alergias" rows="3" placeholder="Celíaco, vegetariano, intolerancia a la lactosa..."></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group form-group-full">
+              <label for="mensaje">Mensaje para los novios</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="¡Queremos leer vuestros deseos!"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">Confirmar asistencia 💌</button>
+          <div class="form-success" id="formSuccess">
+            <span>🎉</span>
+            <p>¡Gracias! Hemos recibido vuestra confirmación. ¡Nos vemos el 31 de octubre!</p>
+          </div>
+        </form>
+      </div>
+    </section> -->
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <p class="footer-names">Sandra &amp; José</p>
+      <p class="footer-date">31 · 10 · 2026</p>
+      <p class="footer-venue">Finca San Miguel · La Orotava, Tenerife</p>
+      <p class="footer-hearts">♥</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
