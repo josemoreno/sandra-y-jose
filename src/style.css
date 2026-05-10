@@ -932,6 +932,56 @@ ul {
 }
 
 /* ================================================
+   REGALOS
+   ================================================ */
+.gift-card {
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gift-icon {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
+.gift-title {
+  font-family: var(--ff-serif);
+  font-size: 1.5rem;
+  color: var(--c-gold);
+  font-weight: 400;
+}
+
+.gift-account {
+  font-family: var(--ff-sans);
+  font-size: 1.1rem;
+  letter-spacing: .1em;
+  color: var(--c-text);
+  font-weight: 500;
+  background: var(--c-surface);
+  padding: .75rem 1rem;
+  border-radius: var(--radius);
+  border: 1px dashed var(--c-gold-lt);
+  margin-top: .5rem;
+  user-select: all;
+}
+
+.gift-names {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--c-text-muted);
+}
+
+/* ================================================
    CAROUSEL
    ================================================ */
 .carousel-wrap {
