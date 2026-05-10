@@ -796,6 +796,20 @@ ul {
   gap: .4rem;
 }
 
+.bus-route-title {
+  font-family: var(--ff-serif);
+  font-size: 1rem;
+  color: var(--c-gold);
+  font-weight: 600;
+  margin-bottom: .2rem;
+}
+
+.bus-route-title:not(:first-child) {
+  margin-top: .5rem;
+  padding-top: .75rem;
+  border-top: 1px dashed var(--c-border);
+}
+
 .bus-time-row {
   display: flex;
   justify-content: space-between;
