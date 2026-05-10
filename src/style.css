@@ -5,15 +5,15 @@
 
 /* ---------- TOKENS ---------- */
 :root {
-  --c-bg: #0f0b0b;
-  --c-surface: #1a1414;
-  --c-surface2: #231c1c;
-  --c-gold: #c9a96e;
-  --c-gold-lt: #e5cfa0;
-  --c-rose: #b56b6b;
-  --c-text: #ede6da;
-  --c-text-muted: #998c7a;
-  --c-border: rgba(201, 169, 110, .18);
+  --c-bg: #fdfbf7;
+  --c-surface: #ffffff;
+  --c-surface2: #f5f2eb;
+  --c-gold: #4a3518;
+  --c-gold-lt: #6b4e24;
+  --c-rose: #a03030;
+  --c-text: #080604;
+  --c-text-muted: #261a0c;
+  --c-border: rgba(74, 53, 24, .25);
 
   --ff-serif: 'Cormorant Garamond', Georgia, serif;
   --ff-sans: 'Jost', system-ui, sans-serif;
@@ -96,13 +96,13 @@ ul {
   z-index: 100;
   height: var(--nav-h);
   backdrop-filter: blur(16px);
-  background: rgba(15, 11, 11, .7);
+  background: rgba(253, 251, 247, .7);
   border-bottom: 1px solid var(--c-border);
   transition: background .3s;
 }
 
 #navbar.scrolled {
-  background: rgba(15, 11, 11, .95);
+  background: rgba(253, 251, 247, .95);
 }
 
 .nav-inner {
@@ -229,17 +229,17 @@ ul {
   justify-content: center;
   overflow: hidden;
   background:
-    url('/images/hero-bg.webp') center/cover no-repeat,
-    url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1600&q=80') center/cover no-repeat;
+    url('/images/portada.jpeg') bottom center/cover no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg,
-      rgba(10, 6, 6, .82) 0%,
-      rgba(80, 30, 30, .55) 60%,
-      rgba(10, 6, 6, .90) 100%);
+  background: linear-gradient(180deg,
+      rgba(253, 251, 247, 0.72) 0%,
+      rgba(253, 251, 247, 0.45) 50%,
+      rgba(253, 251, 247, 0.82) 100%);
+  backdrop-filter: blur(1px);
 }
 
 .hero-content {
@@ -252,6 +252,10 @@ ul {
   align-items: center;
   gap: .75rem;
   max-width: 700px;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 1),
+    0 0 24px rgba(255, 255, 255, 0.95),
+    0 2px 6px rgba(255, 255, 255, 0.9);
 }
 
 .hero-pre {
@@ -423,6 +427,25 @@ ul {
 /* ================================================
    FECHA Y LUGAR
    ================================================ */
+#fecha-lugar {
+  position: relative;
+  background:
+    url('/images/finca.jpg') center 60% / cover no-repeat;
+}
+
+#fecha-lugar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 251, 247, 0.88);
+  pointer-events: none;
+}
+
+#fecha-lugar .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
 .fl-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -522,6 +545,120 @@ ul {
 /* ================================================
    TIMELINE / PROGRAMA
    ================================================ */
+
+/* Two-column grid wrapper */
+.programa-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .programa-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.programa-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.programa-col-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.programa-day-tag {
+  font-size: .7rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  font-family: var(--ff-sans);
+  font-weight: 400;
+}
+
+.programa-col-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 300;
+  color: var(--c-text);
+  line-height: 1.2;
+}
+
+.programa-col-sub {
+  font-size: .8rem;
+  color: var(--c-text-muted);
+  letter-spacing: .06em;
+}
+
+/* Preboda card */
+.preboda-card {
+  background: rgba(150, 125, 74, .06);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  text-align: center;
+}
+
+.preboda-time {
+  font-family: var(--ff-serif);
+  font-size: 1.4rem;
+  color: var(--c-gold);
+  font-weight: 400;
+  letter-spacing: .05em;
+}
+
+.preboda-icon {
+  font-size: 2.2rem;
+}
+
+.preboda-title {
+  font-family: var(--ff-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--c-text);
+}
+
+.preboda-desc {
+  font-size: .9rem;
+  color: var(--c-text-muted);
+  line-height: 1.8;
+  max-width: 340px;
+}
+
+.preboda-note {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .25rem;
+  padding: .5rem 1rem;
+  border: 1px dashed var(--c-border);
+  border-radius: 50px;
+  font-size: .78rem;
+  color: var(--c-text-muted);
+  letter-spacing: .06em;
+}
+
+/* Reset timeline max-width inside column */
+.programa-col .timeline {
+  max-width: 100%;
+}
+
+
 .timeline {
   width: 100%;
   max-width: 640px;
