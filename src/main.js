@@ -159,11 +159,11 @@ if (form) {
     e.preventDefault();
 
     // Simple validation
-    const nombre    = form.nombre.value.trim();
-    const email     = form.email.value.trim();
+    const nombre     = form.nombre.value.trim();
     const asistencia = form.asistencia.value;
+    const autobus    = form.autobus.value;
 
-    if (!nombre || !email || !asistencia) {
+    if (!nombre || !asistencia || !autobus) {
       shakeForm();
       return;
     }
@@ -171,15 +171,44 @@ if (form) {
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
 
-    // Simulate async submission (replace with real endpoint if needed)
-    await new Promise(r => setTimeout(r, 1000));
+    // Build payload for Google Forms
+    const formParams = new URLSearchParams();
+    
+    // Nombre
+    formParams.append('entry.1279848631', nombre);
+    
+    // Asistencia ("Sí" / "No")
+    formParams.append('entry.729499112', asistencia);
+    
+    // Acompañantes (text)
+    formParams.append('entry.333804628', form.acompanantes.value.trim());
+    
+    // Guagua ("No" / "Sí")
+    formParams.append('entry.883705565', autobus);
+    
+    // Hotel alojamiento (text)
+    formParams.append('entry.1151945140', form.hotel.value.trim());
+    
+    // Alergias (text)
+    formParams.append('entry.883351376', form.alergias.value.trim());
+
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfC7M8jbkuSlMRTl1IxAn5mI_MJS-1ZGkn8LsexERoOK-Pz9g/formResponse';
+
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formParams
+      });
+      // no-cors mode returns an opaque response, we assume success
+    } catch (e) {
+      console.error('Error enviando formulario:', e);
+    }
 
     form.querySelectorAll('input, select, textarea, button').forEach(el => {
       el.style.display = 'none';
     });
     formSuccess.classList.add('visible');
-
-    console.log('RSVP data:', Object.fromEntries(new FormData(form)));
   });
 }
 

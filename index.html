@@ -363,13 +363,9 @@
       </p>
       <form class="rsvp-form" id="rsvpForm" novalidate>
         <div class="form-row">
-          <div class="form-group">
+          <div class="form-group form-group-full">
             <label for="nombre">Nombre completo *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            <input type="text" id="nombre" name="nombre" placeholder="Sus nombres y apellidos" required />
           </div>
         </div>
         <div class="form-row">
@@ -377,29 +373,27 @@
             <label for="asistencia">Asistencia *</label>
             <select id="asistencia" name="asistencia" required>
               <option value="">Selecciona...</option>
-              <option value="si">✅ Sí, allí estaré</option>
-              <option value="no">❌ No podré asistir</option>
+              <option value="Sí">Sí</option>
+              <option value="No">No</option>
             </select>
           </div>
           <div class="form-group">
             <label for="acompanantes">Acompañantes</label>
-            <select id="acompanantes" name="acompanantes">
-              <option value="0">Solo/a</option>
-              <option value="1">+1 persona</option>
-              <option value="2">+2 personas</option>
-              <option value="3">+3 personas</option>
-            </select>
+            <input type="text" id="acompanantes" name="acompanantes" placeholder="Nombres de sus acompañantes" />
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group form-group-full">
-            <label for="autobus-check">¿Necesitan guagua?</label>
-            <select id="autobus-check" name="autobus">
-              <option value="no">No, gracias</option>
-              <option value="santa-cruz">Sí – Santa Cruz de Tenerife</option>
-              <option value="puerto">Sí – Puerto de la Cruz</option>
-              <option value="sur">Sí – Los Cristianos / Las Américas</option>
+          <div class="form-group">
+            <label for="autobus">¿Necesitan guagua? *</label>
+            <select id="autobus" name="autobus" required>
+              <option value="">Selecciona...</option>
+              <option value="Sí">Sí</option>
+              <option value="No">No</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="hotel">Si vienen en nuestra guagua, ¿dónde se alojan?</label>
+            <input type="text" id="hotel" name="hotel" placeholder="Nombre del hotel" />
           </div>
         </div>
         <div class="form-row">
@@ -407,12 +401,6 @@
             <label for="alergias">Alergias o restricciones alimentarias</label>
             <textarea id="alergias" name="alergias" rows="3"
               placeholder="Celíaco, vegetariano, intolerancia a la lactosa..."></textarea>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group form-group-full">
-            <label for="mensaje">Mensaje para los novios</label>
-            <textarea id="mensaje" name="mensaje" rows="3" placeholder="¡Queremos leer sus deseos!"></textarea>
           </div>
         </div>
         <button type="submit" class="btn-submit" id="submitBtn">Confirmar asistencia 💌</button>
