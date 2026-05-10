@@ -229,7 +229,7 @@ ul {
   justify-content: center;
   overflow: hidden;
   background:
-    url('/images/portada.jpeg') bottom center/cover no-repeat;
+    url('/images/portada.jpeg') bottom left/cover no-repeat;
 }
 
 .hero-overlay {
