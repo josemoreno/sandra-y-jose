@@ -305,6 +305,18 @@ ul {
   animation: fadeUp .8s .3s ease both;
 }
 
+.hero-quote {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-style: italic;
+  color: var(--c-text);
+  max-width: 550px;
+  line-height: 1.5;
+  margin-top: .75rem;
+  margin-bottom: .25rem;
+  animation: fadeUp .8s .35s ease both;
+}
+
 /* Countdown */
 .countdown {
   display: flex;
@@ -732,7 +744,7 @@ ul {
 
 @media (min-width: 600px) {
   .bus-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
