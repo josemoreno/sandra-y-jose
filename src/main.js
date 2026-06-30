@@ -155,15 +155,26 @@ const submitBtn   = document.getElementById('submitBtn');
 const formSuccess = document.getElementById('formSuccess');
 
 if (form) {
+  // Auto-set preboda and guagua to "No" when asistencia is "No"
+  form.asistencia.addEventListener('change', () => {
+    if (form.asistencia.value === 'No') {
+      form.preboda.value = 'No';
+      form.autobus.value = 'No';
+    }
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Simple validation
-    const nombre     = form.nombre.value.trim();
-    const asistencia = form.asistencia.value;
-    const autobus    = form.autobus.value;
+    const nombre       = form.nombre.value.trim();
+    const asistencia   = form.asistencia.value;
+    const preboda      = form.preboda.value;
+    const autobus      = form.autobus.value;
+    const alimentacionChecked = form.querySelectorAll('input[name="alimentacion"]:checked');
+    const alimentacion = Array.from(alimentacionChecked).map(el => el.value);
 
-    if (!nombre || !asistencia || !autobus) {
+    if (!nombre || !asistencia || !preboda || !autobus) {
       shakeForm();
       return;
     }
@@ -183,29 +194,58 @@ if (form) {
     // Acompañantes (text)
     formParams.append('entry.333804628', form.acompanantes.value.trim());
     
+    // Preboda ("Sí" / "No")
+    formParams.append('entry.1511169788', preboda);
+    
     // Guagua ("No" / "Sí")
     formParams.append('entry.883705565', autobus);
     
     // Hotel alojamiento (text)
     formParams.append('entry.1151945140', form.hotel.value.trim());
     
+    // Alimentación (checkboxes)
+    alimentacion.forEach(val => formParams.append('entry.577577609', val));
+    
     // Alergias (text)
     formParams.append('entry.883351376', form.alergias.value.trim());
 
     const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfC7M8jbkuSlMRTl1IxAn5mI_MJS-1ZGkn8LsexERoOK-Pz9g/formResponse';
 
+    console.log('Submitting to Google Forms:', Object.fromEntries(formParams.entries()));
+
     try {
-      await fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formParams
-      });
-      // no-cors mode returns an opaque response, we assume success
+      // Use hidden iframe to avoid CORS issues
+      const iframe = document.createElement('iframe');
+      iframe.name = 'hidden_iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      const tempForm = document.createElement('form');
+      tempForm.method = 'POST';
+      tempForm.action = GOOGLE_FORM_URL;
+      tempForm.target = 'hidden_iframe';
+
+      for (const [key, value] of formParams.entries()) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        tempForm.appendChild(input);
+      }
+
+      document.body.appendChild(tempForm);
+      tempForm.submit();
+
+      // Clean up after submission
+      setTimeout(() => {
+        document.body.removeChild(tempForm);
+        document.body.removeChild(iframe);
+      }, 2000);
     } catch (e) {
       console.error('Error enviando formulario:', e);
     }
 
-    form.querySelectorAll('input, select, textarea, button').forEach(el => {
+    form.querySelectorAll('.form-row, .form-group, .btn-submit').forEach(el => {
       el.style.display = 'none';
     });
     formSuccess.classList.add('visible');

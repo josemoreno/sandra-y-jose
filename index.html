@@ -346,7 +346,7 @@
       <form class="rsvp-form" id="rsvpForm" novalidate>
         <div class="form-row">
           <div class="form-group form-group-full">
-            <label for="nombre">Nombre completo *</label>
+            <label for="nombre">Nombre completo (nombre y apellidos) *</label>
             <input type="text" id="nombre" name="nombre" placeholder="Sus nombres y apellidos" required />
           </div>
         </div>
@@ -360,13 +360,21 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="acompanantes">Acompañantes</label>
-            <input type="text" id="acompanantes" name="acompanantes" placeholder="Nombres de sus acompañantes" />
+            <label for="acompanantes">¿Vienes acompañado?</label>
+            <textarea id="acompanantes" name="acompanantes" rows="2" placeholder="Nombre y apellidos / Nombre y edad para los niños"></textarea>
           </div>
         </div>
+        <div class="form-group">
+            <label for="preboda">¿Vendrás a la preboda el día antes de la boda? *</label>
+            <select id="preboda" name="preboda" required>
+              <option value="">Selecciona...</option>
+              <option value="Sí">Sí</option>
+              <option value="No">No</option>
+            </select>
+          </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="autobus">¿Necesitan guagua? *</label>
+            <label for="autobus">¿Necesitas guagua el día de la boda? *</label>
             <select id="autobus" name="autobus" required>
               <option value="">Selecciona...</option>
               <option value="Sí">Sí</option>
@@ -374,13 +382,25 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="hotel">Si vienen en nuestra guagua, ¿dónde se alojan?</label>
+            <label for="hotel">Si necesitas guagua, ¿sabes ya dónde te alojas?</label>
             <input type="text" id="hotel" name="hotel" placeholder="Nombre del hotel" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group form-group-full">
+            <label>Alimentación</label>
+            <div class="form-radio-group" id="alimentacionGroup">
+              <label class="form-radio"><input type="checkbox" name="alimentacion" value="Vegetariano" /> Vegetariano</label>
+              <label class="form-radio"><input type="checkbox" name="alimentacion" value="Vegano" /> Vegano</label>
+              <label class="form-radio"><input type="checkbox" name="alimentacion" value="Carne no pescado" /> Como carne pero no pescado</label>
+              <label class="form-radio"><input type="checkbox" name="alimentacion" value="Pescado no carne" /> Como pescado pero no carne</label>
+            </div>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group form-group-full">
-            <label for="alergias">Alergias o restricciones alimentarias</label>
+            <label for="alergias">Otros (alergias, intolerancias…)</label>
             <textarea id="alergias" name="alergias" rows="3"
               placeholder="Celíaco, vegetariano, intolerancia a la lactosa..."></textarea>
           </div>

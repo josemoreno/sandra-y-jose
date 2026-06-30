@@ -1176,7 +1176,7 @@ ul {
   color: var(--c-text-muted);
 }
 
-.form-group input,
+.form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
   background: var(--c-surface2);
@@ -1194,7 +1194,7 @@ ul {
   -webkit-appearance: none;
 }
 
-.form-group input:focus,
+.form-group input:not([type="radio"]):not([type="checkbox"]):focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--c-gold);
@@ -1202,6 +1202,30 @@ ul {
 
 .form-group select option {
   background: var(--c-surface);
+}
+
+.form-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-top: .4rem;
+}
+
+.form-radio {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9rem;
+  color: var(--c-text);
+  cursor: pointer;
+}
+
+.form-radio input[type="radio"],
+.form-radio input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--c-gold);
+  cursor: pointer;
 }
 
 .btn-submit {
